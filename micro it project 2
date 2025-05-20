@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class PasswordGenerator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lower = "abcdefghijklmnopqrstuvwxyz";
+        String numbers = "0123456789";
+        String symbols = "!@#$%^&*()-_=+<>?";
+        String combined = upper + lower + numbers + symbols;
+
+        System.out.print("Enter desired password length: ");
+        int length = sc.nextInt();
+
+        StringBuilder password = new StringBuilder();
+        Random rand = new Random();
+
+        for (int i = 0; i < length; i++) {
+            int index = rand.nextInt(combined.length());
+            password.append(combined.charAt(index));
+        }
+
+        System.out.println("Generated Password: " + password.toString());
+        sc.close();
+    }
+}
+
+
+Added Password Generator Java code
